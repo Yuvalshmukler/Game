@@ -6,6 +6,7 @@ const FLAG = '🚩'
 const SMILE = '😊'
 const SAD = '🥴'
 const WINNER = '😎'
+
 var gBoard
 var gTimerInterval
 var gLevel = {
@@ -18,7 +19,7 @@ var gGame = { // TODO for later
     markedCount: 0,
     isFirstClick: true,
     //hints: 3, LATER
-    //lives: 3, LATER
+    lives: 3,
 }
 
 function init() {
@@ -82,7 +83,7 @@ function cellClicked(elCell, i, j) {
     if (gGame.isFirstClick) {
         gGame.isOn = true
         gGame.isFirstClick = false
-        expandShown(gBoard, i, j)
+        //expandShown(gBoard, i, j)
         startTimer()
     }
     // if game is not on return!
@@ -145,25 +146,26 @@ function cellMarked(event, elCell, i, j) {
 
 
 function gameOver() {
-    clearInterval(gTimerInterval)
+/*     gGame.lives--
+    if (gGame.lives === 3) { */
+        clearInterval(gTimerInterval)
 
-    var restartButton = document.querySelector('.restart-button')
-    restartButton.innerText = 'Try Again!' + SAD
-    gGame.isOn = false
+        var restartButton = document.querySelector('.restart-button')
+        restartButton.innerText = 'Try Again!' + SAD
+        gGame.isOn = false
 
-    for (var i = 0; i < gBoard.length; i++) {
-        for (var j = 0; j < gBoard[i].length; j++) {
-            var currCell = gBoard[i][j]
-            if (!currCell.isMine) continue
-            currCell.isShown = true
-            var id = '#' + getIdName({ i, j })
-            var elCell = document.querySelector(id)
-            elCell.innerText = MINE
-            elCell.classList.add('shown-cell')
+        for (var i = 0; i < gBoard.length; i++) {
+            for (var j = 0; j < gBoard[i].length; j++) {
+                var currCell = gBoard[i][j]
+                if (!currCell.isMine) continue
+                currCell.isShown = true
+                var id = '#' + getIdName({ i, j })
+                var elCell = document.querySelector(id)
+                elCell.innerText = MINE
+                elCell.classList.add('shown-cell')
+            }
         }
     }
-}
-
 
 
 
@@ -176,7 +178,7 @@ function checkGameOver() {
             //console.log(currCell);
             //console.log(currCell);
             //if (!currCell.isShown || !currCell.isMarked) return
-            if (gGame.markedCount >= gLevel.mines) {
+            if (gGame.markedCount === gLevel.mines) {
                 if (gGame.shownCount === ((gLevel.size ** 2) - gGame.markedCount)) {
                     //console.log('gLevel.size', gLevel.size);
                     console.log('gGame.markedCount', gGame.markedCount);
@@ -216,10 +218,13 @@ function expandShown(board, IdxI, IdxJ) {
             elNegCell.classList.add('shown-cell');
             elNegCell.innerText = currCell.minesAroundCount;
 
-            expandShown(board, IdxI, IdxJ)
+            if (currCell.minesAroundCount === 0) expandShown(board, i, j)
+
+
         }
     }
 }
+
 
 
 function restartGame() {

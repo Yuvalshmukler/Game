@@ -84,7 +84,10 @@ function getRandomMine() {
         //console.log(idxI);
         var idxJ = getRandomInt(0, gLevel.size - 1)
         //console.log(idxJ);
-        if (gBoard[idxI][idxJ].isMine) continue
+        if (gBoard[idxI][idxJ].isMine) {
+            i--
+            continue
+        }
         gBoard[idxI][idxJ].isMine = true
     }
 

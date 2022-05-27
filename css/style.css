@@ -13,8 +13,9 @@ body {
     text-align: center;
     transition: 0.5s;
     border-radius: 2px;
-
-    opacity: 70%
+  
+/*     opacity: 70%
+ */    
 }
 
 .board td:hover {
@@ -106,7 +107,13 @@ button {
         inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
 }
 
-
+ul{
+    list-style: none;
+    margin-right: 50px;
+}
+li{
+    display: inline-block;
+}
 .timer {
 
     font-family: 'Cookie', cursive;
@@ -124,11 +131,11 @@ button {
 }
 
 .hidden-cell {
-    background-color: rgb(192, 192, 150);
+    background-color: rgba(192, 192, 150, 0.542);
 }
 
 .shown-cell {
-    background-color: #54effa
+    background-color: #79eaf3
 }
 
 .timer {
