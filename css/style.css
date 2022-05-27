@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-image: url("/img/1.jpg");
+    background-image: url("../img/1.jpg");
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 25px;
 }
