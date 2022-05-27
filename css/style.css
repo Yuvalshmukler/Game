@@ -1,33 +1,147 @@
-body{
+body {
     text-align: center;
+    background-image: url("/img/1.jpg");
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 25px;
 }
 
+
+
 .board td {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     transition: 0.5s;
-    background-color: aquamarine;
+    border-radius: 2px;
+
+    opacity: 70%
 }
 
 .board td:hover {
-    background-color: rgb(161, 148, 143);
+    background-color: rgb(164, 247, 255);
 }
 
-
-.board{
+.board {
     margin: auto;
+    height: 100px;
+    font-family: 'Cookie', cursive;
+    font-weight: bold;
+}
+
+/* rgb(233, 248, 205);
+ */
+
+/* button:hover {
+    background-color: rgb(233, 248, 205);
+}
+ */
+
+
+
+.rights {
+    font-size: 15px;
+    font-family: 'Handlee', cursive;
+
 }
 
 button {
-    font-size: 24px;
-    background-color: lightblue;
-    margin-bottom: 20px;
-    padding: 4px;
-    border-radius: 4px;
-
+    margin: 20px;
+    font-family: 'Cookie', cursive;
 
 }
-.title{
-    margin-top: 100px;
+
+.btn {
+    width: 130px;
+    height: 40px;
+    font-size: 23px;
+    color: rgb(12, 3, 3);
+    border-radius: 9px;
+    padding: 10px 25px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(156, 159, 161, 0.5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
 }
+
+.btn {
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #84c8d7;
+    background-image: linear-gradient(315deg, rgb(231, 227, 96) 0%, #F3ED9E 74%);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: rgb(13, 8, 76);
+}
+
+.btn:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+
+.timer {
+
+    font-family: 'Cookie', cursive;
+}
+
+.title {
+    margin-top: 50px;
+}
+
+.restart-button {
+    cursor: default;
+    height: 50px;
+    width: 200px;
+    font-family: 'Handlee', cursive;
+}
+
+.hidden-cell {
+    background-color: rgb(192, 192, 150);
+}
+
+.shown-cell {
+    background-color: #54effa
+}
+
+.timer {
+    font-size: 22px;
+    font-family: 'Handlee', cursive;
+    font-size: bold;
+
+}
+
+
+/* <body onload="init()">
+    <h1 class="title">Mine Sweeper</h1>
+    <div class="timer">00:00
+      <img class="timer-pic" src="img/stopwatch_23f1-fe0f.png" alt="">  
+      <p class="timer-p">Timer</p>
+    </div> */
