@@ -5,21 +5,19 @@ body {
     font-size: 25px;
 }
 
-
-
 .board td {
     width: 40px;
     height: 40px;
     text-align: center;
     transition: 0.5s;
-    border-radius: 2px;
-  
-/*     opacity: 70%
- */    
+    border-radius: 2.5px;
+
+    /*     opacity: 70%
+ */
 }
 
 .board td:hover {
-    background-color: rgb(164, 247, 255);
+    background-color: rgb(158, 236, 244);
 }
 
 .board {
@@ -27,17 +25,9 @@ body {
     height: 100px;
     font-family: 'Cookie', cursive;
     font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
-
-/* rgb(233, 248, 205);
- */
-
-/* button:hover {
-    background-color: rgb(233, 248, 205);
-}
- */
-
-
 
 .rights {
     font-size: 15px;
@@ -107,13 +97,26 @@ button {
         inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
 }
 
-ul{
-    list-style: none;
-    margin-right: 50px;
+.safe-clickes {
+    margin-left: 20px;
 }
-li{
+
+.lives {
+    margin-right: 20px;
+}
+
+h5 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-family: 'Handlee', cursive;
+    font-weight: normal;
     display: inline-block;
 }
+
+.options {
+    margin-bottom: 0px;
+}
+
 .timer {
 
     font-family: 'Cookie', cursive;
@@ -130,12 +133,21 @@ li{
     font-family: 'Handlee', cursive;
 }
 
+.undo-button {
+    width: 120px;
+    background-image: linear-gradient(315deg, #86f1ff 0%, #F3ED9E 70%);
+}
+
+.undo-button:after {
+    background-image: linear-gradient(315deg, #9ae4ee 0%, #b7f9f1 74%);
+}
+
 .hidden-cell {
     background-color: rgba(192, 192, 150, 0.542);
 }
 
 .shown-cell {
-    background-color: #79eaf3
+    background-color: #92eef5
 }
 
 .timer {
@@ -144,11 +156,3 @@ li{
     font-size: bold;
 
 }
-
-
-/* <body onload="init()">
-    <h1 class="title">Mine Sweeper</h1>
-    <div class="timer">00:00
-      <img class="timer-pic" src="img/stopwatch_23f1-fe0f.png" alt="">  
-      <p class="timer-p">Timer</p>
-    </div> */

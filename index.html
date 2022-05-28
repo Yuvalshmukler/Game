@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minesweeper🚩</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -21,25 +22,30 @@
 
 <body onload="init()">
     <h1 class="title">Mine Sweeper</h1>
-    <div class="timer">Timer:00:00</div>
-
-
+    <div class="timer"> Timer:00:00</div>
     <button class="restart-button btn" onclick="restartGame()">Let's start! 😊</button>
-    <div class="levels">
+    <div class="options">
+        <h5 class="lives">lives:❤️❤️❤️</h5>
+        <h5>Hints:
+            <span class="Hints" onclick=" getHintBtn(this)"><i class="fa-regular fa-lightbulb"></i> </span>
+            <span class="Hints" onclick=" getHintBtn(this)"><i class="fa-regular fa-lightbulb"></i> </span>
+            <span class="Hints" onclick=" getHintBtn(this)"><i class="fa-regular fa-lightbulb"></i> </span>
+        </h5>
+        <h5 class="safe-clickes">Safe Click
 
+            <span class="safe safe1" onclick="getSafeClick(this)"><i class="fa-solid fa-wand-sparkles"></i></span>
+            <span class="safe safe2" onclick="getSafeClick(this)"><i class="fa-solid fa-wand-sparkles"></i></span>
+            <span class="safe safe3" onclick="getSafeClick(this)"><i class="fa-solid fa-wand-sparkles"></i></span>
+        </h5>
+    </div>
+    <div class="levels">
         <button class="beginner btn" onclick="borderSize(4)">Beginner</button>
         <button class="medium btn" onclick="borderSize(8)">Medium</button>
         <button class="expert btn" onclick="borderSize(12)">Expert</button>
     </div>
-    <!--     <ul>
-        <li>
-            <ion-icon name="flash-outline"></ion-icon>
-        </li>
-        <li>😇</li>
-        <li>😇</li>
-    </ul>
- -->
+
     <table class="board"></table>
+    <button class="undo-button btn" onclick="undoSteps()" >undo <i class="fa-solid fa-arrow-rotate-left"></i></button>
     <br>
     <br>
     <footer>
@@ -48,6 +54,7 @@
 
 </body>
 
+<script src="https://kit.fontawesome.com/fe6ae7baff.js" crossorigin="anonymous"></script>
 <script src="js/util.js"></script>
 <script src="js/main.js"></script>
 

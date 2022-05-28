@@ -22,9 +22,11 @@ function setMinesNegsCount(board) {
             var currCell = board[i][j]
             if (currCell.isMine) continue
             currCell.minesAroundCount = getMinsAroundCount(i, j, board)
+            
         }
     }
 }
+
 /* function countNeighbors(cellI, cellJ, mat) {
     var neighbors = []
     for (var i = cellI - 1; i <= cellI + 1; i++) {
@@ -57,7 +59,7 @@ function startTimer() {
         var elSpan = document.querySelector('.timer')
         elSpan.innerText = 'Timer: ' + seconds
 
-    }, 59)
+    }, 58)
 }
 function borderSize(elSize) {
     if (elSize === 4) {
@@ -92,17 +94,6 @@ function getRandomMine() {
     }
 
 }
-
-//restartGame()
-
-
-/* function renderCell(cell) {
-    // Select the elCell and set the value
-    if 
-    var elCell = document.querySelector(`.cell-${location.i}-${location.j}`);
-    elCell.innerHTML = value;
-}
- */
 
 function getIdName(location) {
     var cellId = 'cell-' + location.i + '-' + location.j;
